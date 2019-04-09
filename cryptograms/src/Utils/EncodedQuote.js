@@ -1,0 +1,1 @@
+// will return original quote and encoded quote
