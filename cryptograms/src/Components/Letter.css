@@ -1,0 +1,10 @@
+.Letter{
+}
+
+.LetterTile{
+    display:flex;  
+    flex-direction:row;
+    display:inline;
+    width: 10px;
+    border:1px solid black;
+}

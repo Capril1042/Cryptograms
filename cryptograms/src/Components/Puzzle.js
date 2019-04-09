@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Puzzle.css';
+import Letter from './Letter';
 
 class Puzzle extends Component {
   constructor(props){
@@ -14,14 +15,13 @@ class Puzzle extends Component {
     }
   }
   render() {
-    const game = this.state.encodedQuote.join("");
-    console.log()
+    const game = this.state.encodedQuote;
     return (
       <div className="App">
        Crytogram
-       <h1>{this.state.playersQuote.join("")}</h1>
-       <h1>
-       {game}</h1>
+       <h1>{this.state.playersQuote}</h1>
+       <div> {game.map((letter, i)=> <Letter key={i} letter={letter}/>)}
+       </div>
       </div>
     );
   }
