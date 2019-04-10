@@ -1,4 +1,21 @@
-export default function MapOfUniqueLetters(quote){
+  let coderArray= [97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122];
+
+function encodedQuote(quote, map){
+  let quoteArray= quote.toLowerCase().split("");
+  let encodedQuote= ""
+  for(let letter in quoteArray) {
+    if(map.has(quoteArray[letter])) {
+      let codedletter = map.get(quoteArray[letter]);
+      encodedQuote= encodedQuote + codedletter;
+    }else {
+    encodedQuote= encodedQuote + quoteArray[letter];
+    }
+  }
+  return encodedQuote;
+}
+
+
+function MapOfUniqueLetters(quote){
 let quoteArray = quote.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()\s]/g,"").toLowerCase().split("");
 let mapCharToCount = new Map();
 for( let letter in quoteArray)
@@ -10,8 +27,6 @@ coderArray=[97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114
 return mapCharToCount;
 }
 
-
-  let coderArray= [97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122];
 function cb(letter){
   let letterCode = letter.charCodeAt(0);
   let tempIndex = coderArray.indexOf(letterCode);
@@ -26,3 +41,4 @@ function cb(letter){
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
