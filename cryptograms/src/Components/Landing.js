@@ -8,8 +8,8 @@ class Landing extends Component {
        return(
         <div className="LandingPage">
            <h1 className="LandingHeader">Welcome to Cryptograms!</h1> 
-           <Link to="/menu" className="LandingButton">Play Now</Link>
-           <Link to="/rules" className="LandingButton">How to Play</Link>
+           <div className="LandingLink"><Link to="/menu" className="LandingButton">Play Now</Link> </div>
+           <div className="LandingLink"><Link to="/rules" className="LandingButton">How to Play</Link></div>
         </div>
        )
    }
