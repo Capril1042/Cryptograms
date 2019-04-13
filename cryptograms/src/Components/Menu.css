@@ -1,0 +1,18 @@
+.CategoryTabs {
+    justify-content:center;
+    text-align:center;
+    margin:auto;
+}
+
+button {
+    background:black;
+    color:white;
+    font-weight: bold;
+    height:10vh;
+    width:20vw;
+}
+
+.SubMenu {
+    text-align: center;
+    text-transform:uppercase;
+}
