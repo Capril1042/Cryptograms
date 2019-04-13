@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import './Menu.css';
-
 import SubMenu from './SubMenu';
 
 
@@ -26,12 +24,12 @@ handleCategoryClick=(e)=>{
 render () {
     return(
         <div> 
-            <div classnames="CategoryTabs">
-                <button value="movie" onClick={this.handleCategoryClick} classname="Category">Movies</button>
-                <button value="music" onClick={this.handleCategoryClick} classname="Category">Music</button>
-                <button value="tv" onClick={this.handleCategoryClick} classname="Category">TV</button>
-                <button value="books" onClick={this.handleCategoryClick} classname="Category">Books</button>
-                <button value="history" onClick={this.handleCategoryClick} classname="Category">History</button>
+            <div className="CategoryTabs">
+                <button value="movie" onClick={this.handleCategoryClick} className="Category">Movies</button>
+                <button value="music" onClick={this.handleCategoryClick} className="Category">Music</button>
+                <button value="tv" onClick={this.handleCategoryClick} className="Category">TV</button>
+                <button value="books" onClick={this.handleCategoryClick} className="Category">Books</button>
+                <button value="history" onClick={this.handleCategoryClick} className="Category">History</button>
             </div>
             <div className="SubMenu">
             <SubMenu filter={this.state.filter}/>
