@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
+import './SubMenu.css';
 import db from '../firebase';
-import categorize from '../Utils/PuzzleDataCategories';
-import puzzlesByCategory from '../Utils/SortedQuotes';
+
 
 
 
 class SubMenu extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
        this.state= {
            puzzles:[]
@@ -16,8 +17,8 @@ class SubMenu extends Component {
 
 fetchData() {
   const quoteRef = db.collection('Quotes');
-let query = quoteRef.where("category", "==", this.props.filter)
-let newState = [];
+  let query = quoteRef.where("category", "==", this.props.filter)
+  let newState = [];
   query.get().then((querySnapshot) => {
     querySnapshot.forEach((doc)=>
      {
@@ -33,25 +34,34 @@ let newState = [];
 }
 
 componentDidMount(){
-    
 this.fetchData();
 }
 
 componentDidUpdate(prevProps) {
- 
   if (this.props.filter !== prevProps.filter) {
     this.fetchData();
   }
 }
    
    render() {
-       console.log(this.props.filter)
-       console.log(this.state.puzzles)
-       
+     const puzzles = this.state.puzzles;
+     let display = puzzles.length === 0 ? <p>click a category to display puzzles </p> : <div></div>
        return(
         <div>
            <h1>{this.props.filter} Puzzles </h1> 
-
+            {display}
+        <div className="SubMenuGrid">
+          {puzzles.map((puzzle,i) =>
+          <Link className="SubMenuLink"
+            to={{ pathname: "/puzzle",
+            state: {
+              puzzle: this.state.puzzles[i]
+              }
+            }}
+          >
+            <li key={i} className="SubMenuGridItem">{i+1} </li>  </Link>
+          )}
+        </div>
         </div>
        )
    }
