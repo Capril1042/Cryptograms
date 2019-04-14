@@ -1,28 +1,59 @@
 import React, { Component } from 'react';
 import './Puzzle.css';
-import Letter from './Letter';
+import Tile from './Tile';
+
+import encodedQuote from '../Utils/EncodedQuote';
+import blankQuote from '../Utils/BlankQuote';
 
 class Puzzle extends Component {
   constructor(props){
     super(props);
     this.state = {
-      quote: ["t","h","i","s"," ", "i","s"," ","a"," ","q","u","o","t","e","."],
-      encodedQuote:["e","n","p","x"," ", "p","x"," ","y"," ","u","f","l","e","a","."],
       solved: false,
       guesses:0,
       hintsRemaining:3,
-      playersQuote:["_","_","_","_"," ", "_","_"," ","_"," ","_","_","_","_","_","."]
+      quote : "",
+      puzzle: "",
+      playersGuess: "",
     }
   }
+
+  checkPuzzle=()=>{
+    if(this.state.quote === this.state.playersGuess){
+      this.setState({solved: true})
+    }
+  }
+
+  componentDidMount(){
+     const quote= this.props.location.state.puzzle.puzzles.Quote;
+     const game = encodedQuote(quote);
+     let playersGuess=  blankQuote(quote);
+    this.setState({
+      quote: quote,
+      puzzle:game,
+      playersGuess: playersGuess
+    })
+  }
+
   render() {
-    const game = this.state.encodedQuote;
+    console.log(this.state.quote);
+    console.log(this.state.puzzle);
+    console.log(this.state.playersGuess);
+    console.log(this.state.solved);
+    
+    
     return (
-      <div className="App">
-       Crytogram
-       <h1>{this.state.playersQuote}</h1>
-       <div> {game.map((letter, i)=> <Letter key={i} letter={letter}/>)}
+      <div className="GameDisplay">
+        <h1>Crytograms</h1>
+       <div className="GameContainer">
+       <div className="GameControlMenu"> <button className="GameControls">hints</button> 
+       <button className="GameControls" onClick={this.checkPuzzle}>check</button></div>
+       {/* <h1>{this.state.playersQuote}</h1> */}
+       <div className="Game"> {this.state.puzzle.split("").map((letter, i)=> <Tile key={i} letter={letter}/>)}
        </div>
       </div>
+      </div>
+      
     );
   }
 }
