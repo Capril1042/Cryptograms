@@ -4,25 +4,43 @@ import Tile from './Tile';
 
 import encodedQuote from '../Utils/EncodedQuote';
 import blankQuote from '../Utils/BlankQuote';
+import revealLetter from '../Utils/Hints';
+import guessLetter from '../Utils/Guess';
 
 class Puzzle extends Component {
   constructor(props){
     super(props);
     this.state = {
       solved: false,
-      guesses:0,
-      hintsRemaining:3,
+      hintsRemaining: 3,
       quote : "",
       puzzle: "",
       playersGuess: "",
     }
   }
 
-  checkPuzzle=()=>{
-    if(this.state.quote === this.state.playersGuess){
+handleGuess=(e)=> {
+  const indexInt= Number(e.target.getAttribute('index'));
+  let newGuess = guessLetter(this.state.quote,this.state.playersGuess, indexInt, e.target.value);
+  this.setState({playersGuess: newGuess});
+}
+
+  checkPuzzle=()=> {
+    if(this.state.quote.toLowerCase() === this.state.playersGuess.toLowerCase()) {
       this.setState({solved: true})
     }
+    console.log(this.state.solved)
   }
+
+giveHint=()=>{
+  alert(`You have ${this.state.hintsRemaining} hint(s) remaining`);
+  if(this.state.hintsRemaining > 0) {
+   let newPlayersGuess= revealLetter(this.state.quote, this.state.playersGuess)
+  this.setState({
+    playersGuess: newPlayersGuess,
+    hintsRemaining: this.state.hintsRemaining -1 });
+  }
+}
 
   componentDidMount(){
      const quote= this.props.location.state.puzzle.puzzles.Quote;
@@ -40,16 +58,18 @@ class Puzzle extends Component {
     console.log(this.state.puzzle);
     console.log(this.state.playersGuess);
     console.log(this.state.solved);
+    console.log(this.state.hintsRemaining)
     
-    
+    const  puzzle  = this.state.puzzle
+    const  guessPuzzle  = this.state.playersGuess;
     return (
       <div className="GameDisplay">
         <h1>Crytograms</h1>
        <div className="GameContainer">
-       <div className="GameControlMenu"> <button className="GameControls">hints</button> 
+       <div className="GameControlMenu"> <button className="GameControls" onClick={this.giveHint}>hints</button> 
        <button className="GameControls" onClick={this.checkPuzzle}>check</button></div>
        {/* <h1>{this.state.playersQuote}</h1> */}
-       <div className="Game"> {this.state.puzzle.split("").map((letter, i)=> <Tile key={i} letter={letter}/>)}
+       <div className="Game"> {puzzle.split("").map((letter, i)=> <Tile key={i} index={i} letter={letter} guess={guessPuzzle[i]} handleGuess={this.handleGuess}/>)}
        </div>
       </div>
       </div>

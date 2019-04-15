@@ -1,0 +1,22 @@
+.Letter{
+}
+
+.LetterTileContainer{
+    height:6vh;
+    width: 19px;
+}
+
+.LetterTile {
+display: flex;
+flex-direction: column;
+}
+
+.TileTop {
+height:3vh;
+border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+.TileBottom {
+height:3vh;
+}

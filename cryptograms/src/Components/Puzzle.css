@@ -12,4 +12,10 @@
 .Game {
     border: 1px solid black;
     text-align:center;
+    display:flex;
+    flex-flow: row wrap;
+}
+
+input {
+    border: none;
 }
