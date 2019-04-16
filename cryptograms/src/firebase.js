@@ -10,11 +10,8 @@ require('dotenv').config();
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
 
-class Firebase {
-    constructor() {
-    firebase.initializeApp(config);
-    }
-}
 
-
-export default Firebase;
+ const Firebase =firebase.initializeApp(config);
+const db = Firebase.firestore();
+ 
+export default db;

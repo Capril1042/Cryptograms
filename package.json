@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Capril1042/Cryptograms/issues"
   },
-  "homepage": "https://github.com/Capril1042/Cryptograms#readme"
+  "homepage": "https://github.com/Capril1042/Cryptograms#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "firebase": "^5.9.3"
+  }
 }

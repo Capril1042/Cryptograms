@@ -16,9 +16,8 @@ let newState = [];
   quoteRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc)=>
      {
-      console.log(doc.data());
       newState.push({
-        puzzles: doc.data().Quote,
+        puzzles: doc.data(),
       });
     })
     this.setState({
