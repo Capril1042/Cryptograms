@@ -1,9 +1,9 @@
-.Letter{
-}
 
 .LetterTileContainer{
-    height:6vh;
+    height:7vh;
     width: 19px;
+    justify-content: center;
+text-align:center;
 }
 
 .LetterTile {
@@ -13,10 +13,15 @@ flex-direction: column;
 
 .TileTop {
 height:3vh;
-border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-
+font-size: 14px;
 }
 
 .TileBottom {
 height:3vh;
+font-size: 16px;  
+}
+
+input {
+    border: none;
+    width: 10px;
 }

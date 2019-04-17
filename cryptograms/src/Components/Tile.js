@@ -3,16 +3,20 @@ import './Tile.css';
 
  class Tile extends Component {
   render() {
-    return (
-      <div className="LetterTileContainer">
-          <div className="LetterTile">
+    const tile = this.props.letter !== " " ? 
+      <div className="LetterTile">
           <div className="TileTop">
-          <input type="text" maxLength="1" placeholder={this.props.guess} index={this.props.index} onChange={this.props.handleGuess} />
+          <input type="text" maxLength="1" placeholder={ this.props.guess } index={this.props.index} onChange={this.props.handleGuess}>
+          </input> 
           </div>
         <div className="TileBottom">
         {this.props.letter}
         </div>
-        </div>
+        </div> :
+    " ";
+    return (
+      <div className="LetterTileContainer">
+       {tile}
       </div>
       
     );

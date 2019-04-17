@@ -68,7 +68,6 @@ giveHint=()=>{
        <div className="GameContainer">
        <div className="GameControlMenu"> <button className="GameControls" onClick={this.giveHint}>hints</button> 
        <button className="GameControls" onClick={this.checkPuzzle}>check</button></div>
-       {/* <h1>{this.state.playersQuote}</h1> */}
        <div className="Game"> {puzzle.split("").map((letter, i)=> <Tile key={i} index={i} letter={letter} guess={guessPuzzle[i]} handleGuess={this.handleGuess}/>)}
        </div>
       </div>
