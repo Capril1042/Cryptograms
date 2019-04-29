@@ -1,32 +1,32 @@
 body {
-    background-color:#f7f7f7;
+  background-color: #f7f7f7;
 }
 
-.LandingPage {
-    justify-content:center;
-    text-align:center;
-    width:100vw;
-    height:80vh;
-    margin:auto;
-    display: inline-block; 
+.Landing {
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 80vh;
+  margin: auto;
+  display: inline-block;
 }
 
-.LandingHeader {
-    margin-bottom:15%; 
+.Landing__Header {
+  margin-bottom: 15%;
 }
 
-.LandingLink {
-    text-align:center;
-    width:80vw;
-    height:10vh;
-    margin-bottom:5%;
-    margin-left:10%;
-    background-color: black;
+.Landing__Link {
+  text-align: center;
+  width: 60vw;
+  height: 10vh;
+  margin-bottom: 5%;
+  margin-left: 20%;
+  background-color: black;
 }
 
-.LandingButton{
-    color:white;
-    line-height:10vh;
-    text-decoration:none;
-    font-weight:bold;
+.Landing__Button {
+  color: white;
+  line-height: 10vh;
+  text-decoration: none;
+  font-weight: bold;
 }

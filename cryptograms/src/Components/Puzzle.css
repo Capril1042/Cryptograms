@@ -1,18 +1,17 @@
 .GameContainer {
-    display: grid;
-    grid-template-columns: 20vw 80vw ;
+  display: grid;
+  grid-template-columns: 20vw 80vw;
 }
 
 .GameControls {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.009);
-    color:black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.009);
+  color: black;
 }
 
 .Game {
-    border: 1px solid black;
-    text-align:center;
-    display:flex;
-    flex-flow: row wrap;
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
 }
-

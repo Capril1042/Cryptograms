@@ -1,27 +1,26 @@
-
-.LetterTileContainer{
-    height:7vh;
-    width: 19px;
-    justify-content: center;
-text-align:center;
+.LetterTileContainer {
+  height: 7vh;
+  width: 19px;
+  justify-content: center;
+  text-align: center;
 }
 
 .LetterTile {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .TileTop {
-height:3vh;
-font-size: 14px;
+  height: 3vh;
+  font-size: 14px;
 }
 
 .TileBottom {
-height:3vh;
-font-size: 16px;  
+  height: 3vh;
+  font-size: 16px;
 }
 
 input {
-    border: none;
-    width: 10px;
+  border: none;
+  width: 10px;
 }

@@ -1,23 +1,23 @@
-.SubMenuGrid {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 30vw 30vw ;
+.SubMenu__Grid {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 30vw 30vw;
 }
 
-.SubMenuGridItem {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.009);
-    height:5vh;
-    margin:4%;
+.SubMenu__GridItem {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.009);
+  height: 5vh;
+  margin: 4%;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-.SubMenuLink {
-    text-decoration:none;
-    color:black;
-    font-weight: bold;
-    line-height: 5vh;
+.SubMenu__Link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  line-height: 5vh;
 }
