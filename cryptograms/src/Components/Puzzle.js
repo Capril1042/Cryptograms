@@ -36,6 +36,7 @@ class Puzzle extends Component {
     ) {
       this.setState({ solved: true });
     }
+
     console.log(this.state.solved);
   };
 
@@ -73,6 +74,11 @@ class Puzzle extends Component {
 
     const puzzle = this.state.puzzle;
     const guessPuzzle = this.state.playersGuess;
+    const winner = this.state.solved
+      ? "You solved the puzzle!"
+      : "puzzle is not solved";
+
+    const remaining = `You have ${this.state.hintsRemaining} hints left!`;
     return (
       <div className="GameDisplay">
         <h1>Crytograms</h1>
@@ -97,6 +103,10 @@ class Puzzle extends Component {
                 handleGuess={this.handleGuess}
               />
             ))}
+          </div>
+          <div>
+            {remaining}
+            <br /> {winner}
           </div>
         </div>
       </div>

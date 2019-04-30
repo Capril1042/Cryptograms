@@ -1,4 +1,9 @@
+.GameDisplay {
+  text-align:center;
+}
 .GameContainer {
+  width:95vw;
+  margin-left:2%;
   display: grid;
   grid-template-columns: 20vw 80vw;
 }
@@ -14,4 +19,5 @@
   text-align: center;
   display: flex;
   flex-flow: row wrap;
+  width: 75vw;
 }
